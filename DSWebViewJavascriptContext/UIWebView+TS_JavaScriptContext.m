@@ -122,10 +122,22 @@ static NSHashTable* g_webViews = nil;
         
         dispatch_async( dispatch_get_main_queue(), ^{
             
+            
             block();
         });
     };
 
 }
 
+-(void)setBlockWithParam1:(void (^)(NSString *param1))block forKey:(NSString *)key
+{
+    self[key] = ^(NSString *aParam){
+        
+        dispatch_async( dispatch_get_main_queue(), ^{
+            
+            
+            block(aParam);
+        });
+    };
+}
 @end

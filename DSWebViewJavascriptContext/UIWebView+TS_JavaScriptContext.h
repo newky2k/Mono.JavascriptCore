@@ -31,5 +31,5 @@
 -(void)setObject:(NSObject *)obj forKey:(NSString *)key;
 
 -(void)setBlock:(void (^)())block forKey:(NSString *)key;
-
+-(void)setBlockWithParam1:(void (^)(NSString *param1))block forKey:(NSString *)key;
 @end
