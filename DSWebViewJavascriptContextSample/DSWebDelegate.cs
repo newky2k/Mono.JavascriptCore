@@ -20,12 +20,20 @@ namespace DSWebViewJavascriptContextSample
 				ctx.SetObject (webView, @"webView");
 				ctx.SetObject (this, @"webDelegate");
 
+
+				///Attach a hybrid api handler
+				DSHybridHandler.Attach (ctx);
+
 				//load a property
 				ctx.SetObject (ANumber, @"aNumber");
 
 				//create an object that uses DSJavascriptObject as a base classes, which in turn exposes class member using JSExport
 				ctx.SetObject (new aClass (), @"aClass");
 
+				var aClass = ctx [new NSString (@"aClass")];
+				aClass.SetObject (ANumber, @"subNumber");
+				ctx [new NSString (@"aClass")] = aClass;
+			
 				//set a execution block that can accept a number and return a number
 				ctx.SetNumberBlock ((NSNumber num) => {
 					var toInt = num.IntValue;
@@ -95,6 +103,31 @@ namespace DSWebViewJavascriptContextSample
 		public override void SetProperty (string name, NSNumber value)
 		{
 			base.SetProperty (name, value);
+		}
+	}
+
+	public class DSHybridHandler : DSHybridDelegate
+	{
+		/// <summary>
+		/// Attach the specified context.
+		/// </summary>
+		/// <param name="ctx">Context.</param>
+		public static void Attach (JSContext ctx)
+		{
+			//build an namespace structure for the class
+			var aClass = ctx.GetOrCreate (@"DSoft");
+			var aMobile = aClass.GetOrCreate (@"Online");
+			aMobile.SetObject (new DSHybridHandler (), @"Native");
+			aMobile.SetObject (new DSHybridHandler (), @"Cheese");
+		}
+
+		public override void HandleCustomApiUrl (string customUrl)
+		{
+			BeginInvokeOnMainThread (() => {
+				var aNewAler = new UIAlertView ("Custom Url", customUrl, null, "OK", null);
+				aNewAler.Show ();
+			});
+
 		}
 	}
 }

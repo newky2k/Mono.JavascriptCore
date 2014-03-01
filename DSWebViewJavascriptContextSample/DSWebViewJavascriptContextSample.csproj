@@ -116,6 +116,10 @@
       <Project>{05E4FC3F-50AF-4908-813E-24FA513261A4}</Project>
       <Name>DSWebViewJavascriptContextBinding</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DSJavascriptCore\DSJavascriptCore.csproj">
+      <Project>{50AA462B-7B3C-4F84-BCFC-14B480863E04}</Project>
+      <Name>DSJavascriptCore</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\" />

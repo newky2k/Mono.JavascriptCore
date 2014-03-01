@@ -31,11 +31,7 @@ namespace DSWebViewJavascriptContextBinding
 		[Export ("retriveJSContext:")]
 		JSContext RetriveJSContext (NSObject notused);
 	}
-	#region Delegates
-	public delegate void JSObjectCallDelegate ();
-	public delegate void JSObjectCallDelegateParam1 (String param);
-	public delegate NSNumber JSObjectCallDelegateIntParam1 (NSNumber Param);
-	#endregion
+
 	[Category, BaseType (typeof(JSContext))]
 	public partial interface DSIntegration_JSContext
 	{
@@ -49,7 +45,7 @@ namespace DSWebViewJavascriptContextBinding
 		void SetBlock (JSObjectCallDelegateParam1 block, string key);
 
 		[Export ("setNumberBlock:forKey:")]
-		void SetNumberBlock (JSObjectCallDelegateIntParam1 block, string key);
+		void SetNumberBlock (JSDelegateIntParam block, string key);
 	}
 
 	[BaseType (typeof(NSObject))]
@@ -61,5 +57,24 @@ namespace DSWebViewJavascriptContextBinding
 		[Export ("setNumberPropertyWithName:number:")]
 		void SetProperty (string name, NSNumber value);
 	}
+
+	[Category, BaseType (typeof(JSValue))]
+	public partial interface DSIntegration_JSValue
+	{
+		[Export ("setObject:forKey:")]
+		void SetObject (NSObject obj, string key);
+	}
+
+	[BaseType (typeof(NSObject))]
+	public partial interface DSHybridDelegate
+	{
+		[Export ("hybridApiUrl:")]
+		void HandleCustomApiUrl (string customUrl);
+	}
+	#region Delegates
+	public delegate void JSObjectCallDelegate ();
+	public delegate void JSObjectCallDelegateParam1 (String param);
+	public delegate NSNumber JSDelegateIntParam (NSNumber Param);
+	#endregion
 }
 

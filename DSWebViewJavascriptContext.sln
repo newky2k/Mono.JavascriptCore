@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSWebViewJavascriptContextB
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSWebViewJavascriptContextSample", "DSWebViewJavascriptContextSample\DSWebViewJavascriptContextSample.csproj", "{07783E33-75A6-42B7-BBB8-591328360CAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSJavascriptCore", "DSJavascriptCore\DSJavascriptCore.csproj", "{50AA462B-7B3C-4F84-BCFC-14B480863E04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,22 @@ Global
 		{07783E33-75A6-42B7-BBB8-591328360CAB}.Release|iPhone.Build.0 = Release|iPhone
 		{07783E33-75A6-42B7-BBB8-591328360CAB}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{07783E33-75A6-42B7-BBB8-591328360CAB}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Release|iPhone.Build.0 = Release|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{50AA462B-7B3C-4F84-BCFC-14B480863E04}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = DSWebViewJavascriptContextSample\DSWebViewJavascriptContextSample.csproj
