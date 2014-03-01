@@ -1,4 +1,10 @@
 build/
-
+DSWebViewJavascriptContextBinding/bin/
+DSWebViewJavascriptContextBinding/bin/Debug/
+DSWebViewJavascriptContextBinding/obj/
+DSWebViewJavascriptContextSample/bin/
+DSWebViewJavascriptContextSample/obj/
 
 *.a
+*.mdb
+*.dll
