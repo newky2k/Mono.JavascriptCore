@@ -16,20 +16,19 @@ namespace DSWebViewJavascriptContextSample
 				//set an NSObject value in to the context
 				ctx.SetObject (webView, @"viewController");
 
-				//Set an execution block in tothe context
-				ctx.SetBlock (() => {
+				//Set an execution block in the context
+				ctx.SetBlock ((obj) => {
+					var obj2 = obj;
 
-				}, @"doSomething");
+					var aNewAler = new UIAlertView ("Hello", "", null, "OK", null);
+					aNewAler.Show ();
+
+				}, @"doSomething");        
 
 				//ctx.GlobalObject.
 				//ctx [new NSString (@"sayHello")] = webView;  
 			}
 		}
-	}
-
-	public interface someFunctions
-	{
-		void sayHello ();
 	}
 }
 

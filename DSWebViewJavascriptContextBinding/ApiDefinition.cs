@@ -7,7 +7,11 @@ using MonoTouch.JavaScriptCore;
 
 namespace DSWebViewJavascriptContextBinding
 {
-	public delegate void JSObjectCallDelegate ();
+	[Model]
+	public interface JSExport
+	{
+	}
+
 	[Model, BaseType (typeof(UIWebViewDelegate))]
 	public partial interface TSWebViewDelegate
 	{
@@ -21,7 +25,10 @@ namespace DSWebViewJavascriptContextBinding
 		[Export ("retriveJSContext:")]
 		JSContext RetriveJSContext (NSObject notused);
 	}
-
+	#region Delegates
+	public delegate void JSObjectCallDelegate ();
+	public delegate void JSObjectCallDelegateParam1 (String param);
+	#endregion
 	[Category, BaseType (typeof(JSContext))]
 	public partial interface DS_Integration_JSContext
 	{
@@ -30,6 +37,9 @@ namespace DSWebViewJavascriptContextBinding
 
 		[Export ("setBlock:forKey:")]
 		void SetBlock (JSObjectCallDelegate block, string key);
+
+		[Export ("setBlockWithParam1:forKey:")]
+		void SetBlock (JSObjectCallDelegateParam1 block, string key);
 	}
 }
 
