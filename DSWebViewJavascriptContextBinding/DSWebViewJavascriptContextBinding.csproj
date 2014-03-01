@@ -55,6 +55,5 @@
     <Compile Include="libDSWebViewJavascriptContextSDK.linkwith.cs">
       <DependentUpon>libDSWebViewJavascriptContextSDK.a</DependentUpon>
     </Compile>
-    <Compile Include="Extras.cs" />
   </ItemGroup>
 </Project>

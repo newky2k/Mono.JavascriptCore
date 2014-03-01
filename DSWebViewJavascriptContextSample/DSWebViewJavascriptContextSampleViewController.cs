@@ -34,11 +34,6 @@ namespace DSWebViewJavascriptContextSample
 			aWebView.LoadRequest (new NSUrlRequest (new NSUrl (localHtmlUrl, false)));
 			aWebView.ScalesPageToFit = false;
 
-			//aWebView.LoadRequest (new NSUrlRequest (new NSUrl ("http://www.google.com")));
-
-			// Perform any additional setup after loading the view, typically from a nib.
-			//var athing = new TS_JavaScriptContext_UIWebView ();
-
 		}
 	}
 }
