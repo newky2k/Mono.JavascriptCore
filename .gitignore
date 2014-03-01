@@ -8,3 +8,5 @@ DSWebViewJavascriptContextSample/obj/
 *.a
 *.mdb
 *.dll
+
+*.userprefs

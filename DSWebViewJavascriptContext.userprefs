@@ -1,11 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina.7.0" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DSWebViewJavascriptContextSample/DSWebDelegate.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DSWebViewJavascriptContextBinding/ApiDefinition.cs">
     <Files>
-      <File FileName="DSWebViewJavascriptContextBinding/libDSWebViewJavascriptContextSDK.linkwith.cs" Line="5" Column="1" />
-      <File FileName="DSWebViewJavascriptContextBinding/ApiDefinition.cs" Line="34" Column="2" />
-      <File FileName="DSWebViewJavascriptContextBinding/obj/Debug/ios/DSWebViewJavascriptContextBinding/TS_JavaScriptContext_UIWebView.g.cs" Line="45" Column="1" />
-      <File FileName="DSWebViewJavascriptContextSample/DSWebDelegate.cs" Line="27" Column="4" />
+      <File FileName="DSWebViewJavascriptContextBinding/ApiDefinition.cs" Line="30" Column="57" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
