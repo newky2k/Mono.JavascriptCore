@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E26BFD018C279E000727F8F /* DSJavascriptObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E26BFCF18C279E000727F8F /* DSJavascriptObject.m */; };
+		6E26BFD318C27E6500727F8F /* JSContext+DSIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E26BFD218C27E6500727F8F /* JSContext+DSIntegration.m */; };
+		6E26BFD618C27FD200727F8F /* UIWebView+DSIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E26BFD518C27FD200727F8F /* UIWebView+DSIntegration.m */; };
 		6E8DD30C18C1F2EB000A425F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8DD30B18C1F2EB000A425F /* Foundation.framework */; };
 		6E8DD33318C1F33C000A425F /* UIWebView+TS_JavaScriptContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8DD33218C1F33C000A425F /* UIWebView+TS_JavaScriptContext.m */; };
 		6E8DD33518C1F38A000A425F /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E8DD33418C1F38A000A425F /* JavaScriptCore.framework */; };
@@ -26,6 +29,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6E26BFCE18C279E000727F8F /* DSJavascriptObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSJavascriptObject.h; sourceTree = "<group>"; };
+		6E26BFCF18C279E000727F8F /* DSJavascriptObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSJavascriptObject.m; sourceTree = "<group>"; };
+		6E26BFD118C27E6500727F8F /* JSContext+DSIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "JSContext+DSIntegration.h"; sourceTree = "<group>"; };
+		6E26BFD218C27E6500727F8F /* JSContext+DSIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "JSContext+DSIntegration.m"; sourceTree = "<group>"; };
+		6E26BFD418C27FD200727F8F /* UIWebView+DSIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+DSIntegration.h"; sourceTree = "<group>"; };
+		6E26BFD518C27FD200727F8F /* UIWebView+DSIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+DSIntegration.m"; sourceTree = "<group>"; };
 		6E8DD30818C1F2EB000A425F /* libDSWebViewJavascriptContext.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libDSWebViewJavascriptContext.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E8DD30B18C1F2EB000A425F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E8DD30F18C1F2EB000A425F /* DSWebViewJavascriptContext-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DSWebViewJavascriptContext-Prefix.pch"; sourceTree = "<group>"; };
@@ -82,6 +91,12 @@
 				6E8DD33118C1F33C000A425F /* UIWebView+TS_JavaScriptContext.h */,
 				6E8DD33218C1F33C000A425F /* UIWebView+TS_JavaScriptContext.m */,
 				6E8DD30E18C1F2EB000A425F /* Supporting Files */,
+				6E26BFCE18C279E000727F8F /* DSJavascriptObject.h */,
+				6E26BFCF18C279E000727F8F /* DSJavascriptObject.m */,
+				6E26BFD118C27E6500727F8F /* JSContext+DSIntegration.h */,
+				6E26BFD218C27E6500727F8F /* JSContext+DSIntegration.m */,
+				6E26BFD418C27FD200727F8F /* UIWebView+DSIntegration.h */,
+				6E26BFD518C27FD200727F8F /* UIWebView+DSIntegration.m */,
 			);
 			path = DSWebViewJavascriptContext;
 			sourceTree = "<group>";
@@ -145,6 +160,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E26BFD318C27E6500727F8F /* JSContext+DSIntegration.m in Sources */,
+				6E26BFD618C27FD200727F8F /* UIWebView+DSIntegration.m in Sources */,
+				6E26BFD018C279E000727F8F /* DSJavascriptObject.m in Sources */,
 				6E8DD33318C1F33C000A425F /* UIWebView+TS_JavaScriptContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +283,7 @@
 				6E8DD32D18C1F2EB000A425F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

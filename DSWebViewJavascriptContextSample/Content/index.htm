@@ -1,0 +1,34 @@
+﻿<html>
+<head>
+<script type="text/javascript">
+
+function goNative()
+{
+  var aField =  document.getElementById('textBox');
+  
+	sayHello(aField.value);
+}
+
+function goGetInt()
+{
+  	var aValue = getInt(200);
+  
+	alert(aValue);
+}
+
+</script>
+</head>
+<body>
+    
+    <form>
+        <p />
+        <h1>A JS Test</h1>
+        <input type='text' id='textBox' />
+        <button type='button' onclick='goNative()'>Say Hello!</button>
+        <br />
+        <button type='button' onclick='goGetInt()'>Calc something</button>
+
+    </form>
+
+</body>
+</html>

@@ -7,7 +7,8 @@ using MonoTouch.JavaScriptCore;
 
 namespace DSWebViewJavascriptContextBinding
 {
-	[Model]
+	[BaseType (typeof(NSObject))]
+	[Model][Protocol]
 	public interface JSExport
 	{
 	}
@@ -22,15 +23,21 @@ namespace DSWebViewJavascriptContextBinding
 	[Category, BaseType (typeof(UIWebView))]
 	public partial interface TS_JavaScriptContext_UIWebView
 	{
+	}
+
+	[Category, BaseType (typeof(UIWebView))]
+	public partial interface DSIntegration_UIWebView
+	{
 		[Export ("retriveJSContext:")]
 		JSContext RetriveJSContext (NSObject notused);
 	}
 	#region Delegates
 	public delegate void JSObjectCallDelegate ();
 	public delegate void JSObjectCallDelegateParam1 (String param);
+	public delegate NSNumber JSObjectCallDelegateIntParam1 (NSNumber Param);
 	#endregion
 	[Category, BaseType (typeof(JSContext))]
-	public partial interface DS_Integration_JSContext
+	public partial interface DSIntegration_JSContext
 	{
 		[Export ("setObject:forKey:")]
 		void SetObject (NSObject obj, string key);
@@ -40,6 +47,19 @@ namespace DSWebViewJavascriptContextBinding
 
 		[Export ("setBlockWithParam1:forKey:")]
 		void SetBlock (JSObjectCallDelegateParam1 block, string key);
+
+		[Export ("setNumberBlock:forKey:")]
+		void SetNumberBlock (JSObjectCallDelegateIntParam1 block, string key);
+	}
+
+	[BaseType (typeof(NSObject))]
+	public partial interface DSJavascriptObject
+	{
+		[Export ("getProperty:")]
+		NSObject GetProperty (string name);
+
+		[Export ("setNumberPropertyWithName:number:")]
+		void SetProperty (string name, NSNumber value);
 	}
 }
 
