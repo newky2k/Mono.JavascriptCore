@@ -1,0 +1,5 @@
+/Volumes/Data/WorkingCopies/Mono.JavascriptCore/DSWebViewJavascriptContextBinding/obj/Debug/MonoTouch,Version=v1.0.AssemblyAttribute.cs
+/Volumes/Data/WorkingCopies/Mono.JavascriptCore/DSWebViewJavascriptContextBinding/bin/Debug/DSWebViewJavascriptContextBinding.dll.mdb
+/Volumes/Data/WorkingCopies/Mono.JavascriptCore/DSWebViewJavascriptContextBinding/bin/Debug/DSWebViewJavascriptContextBinding.dll
+/Volumes/Data/WorkingCopies/Mono.JavascriptCore/DSWebViewJavascriptContextBinding/obj/Debug/DSWebViewJavascriptContextBinding.dll
+/Volumes/Data/WorkingCopies/Mono.JavascriptCore/DSWebViewJavascriptContextBinding/obj/Debug/DSWebViewJavascriptContextBinding.dll.mdb

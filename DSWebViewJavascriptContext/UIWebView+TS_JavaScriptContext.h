@@ -22,4 +22,14 @@
 
 @property (nonatomic, readonly) JSContext* ts_javaScriptContext;
 
+-(JSContext *)retriveJSContext:(id)notused;
+
+@end
+
+@interface JSContext (DS_Integration)
+
+-(void)setObject:(NSObject *)obj forKey:(NSString *)key;
+
+-(void)setBlock:(void (^)())block forKey:(NSString *)key;
+
 @end

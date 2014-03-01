@@ -102,4 +102,30 @@ static NSHashTable* g_webViews = nil;
     return javaScriptContext;
 }
 
+-(JSContext *)retriveJSContext:(id)notused
+{
+    return [self ts_javaScriptContext];
+}
+
+@end
+
+@implementation JSContext (DS_Integration)
+
+-(void)setObject:(NSObject *)obj forKey:(NSString *)key
+{
+    self[key] = obj;
+}
+
+-(void)setBlock:(void (^)())block forKey:(NSString *)key
+{
+    self[key] = ^{
+        
+        dispatch_async( dispatch_get_main_queue(), ^{
+            
+            block();
+        });
+    };
+
+}
+
 @end
