@@ -6,6 +6,8 @@ namespace MonoTouch.JavaScriptCore
 {
 	public static class JavascriptExtensions
 	{
+		#region JSContext
+
 		/// <summary>
 		/// Gets the JSValue or creates it if not found
 		/// </summary>
@@ -24,6 +26,38 @@ namespace MonoTouch.JavaScriptCore
 
 			return aClass;
 		}
+
+		public static void SetObject (this JSContext ctx, String Namespace, String Name, NSObject Data)
+		{
+			//split the namespace into sections
+			var names = Namespace.Split ('.');
+
+			if (names.Length == 0)
+				return;
+
+			var aRoot = ctx.GetOrCreate (names [0]);
+
+			if (names.Length == 1)
+			{
+				aRoot.SetObject (Data, Name);
+			}
+
+			JSValue endPoint = null;
+
+			for (int loop = 1; loop < names.Length; loop++)
+			{
+				endPoint = aRoot.GetOrCreate (names [loop]);
+			}
+
+			if (endPoint != null && !endPoint.IsUndefined)
+			{
+				endPoint.SetObject (Data, Name);
+			}
+		}
+
+		#endregion
+
+		#region JSValue
 
 		/// <summary>
 		/// Gets the JSValue or creates it if not found
@@ -100,6 +134,8 @@ namespace MonoTouch.JavaScriptCore
 			return jsObject;
 
 		}
+
+		#endregion
 	}
 }
 

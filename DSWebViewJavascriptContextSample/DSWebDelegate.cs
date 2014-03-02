@@ -27,12 +27,15 @@ namespace DSWebViewJavascriptContextSample
 				//load a property
 				ctx.SetObject (ANumber, @"aNumber");
 
-				//create an object that uses DSJavascriptObject as a base classes, which in turn exposes class member using JSExport
+				//attach object to namespace
+				ctx.SetObject ("webView", "aNumber", ANumber);
+
+				//create an object that uses DSJavascriptObject as a base classes, which in turn exposes class members using JSExport
+				//Note this can onl be done with the protocol in Obj-c not monotouch
 				ctx.SetObject (new aClass (), @"aClass");
 
-				var aClass = ctx [new NSString (@"aClass")];
-				aClass.SetObject (ANumber, @"subNumber");
-				ctx [new NSString (@"aClass")] = aClass;
+				//attach extra property to the aclass object
+				ctx.SetObject ("aClass", "subNumber", ANumber);
 			
 				//set a execution block that can accept a number and return a number
 				ctx.SetNumberBlock ((NSNumber num) => {
@@ -41,9 +44,6 @@ namespace DSWebViewJavascriptContextSample
 					return new NSNumber (toInt * 2);
 				}, @"getInt");
 					
-				//the same as above but a method with the class
-				ctx.SetNumberBlock (GetInt2, @"getInt2");
-
 				//Set an execution block in the context, 1 parameter no return type
 				ctx.SetBlock ((obj) => {
 

@@ -39,13 +39,13 @@ namespace DSWebViewJavascriptContextBinding
 		void SetObject (NSObject obj, string key);
 
 		[Export ("setBlock:forKey:")]
-		void SetBlock (JSObjectCallDelegate block, string key);
+		void SetBlock (Action block, string key);
 
 		[Export ("setBlockWithParam1:forKey:")]
-		void SetBlock (JSObjectCallDelegateParam1 block, string key);
+		void SetBlock (Action<String> block, string key);
 
 		[Export ("setNumberBlock:forKey:")]
-		void SetNumberBlock (JSDelegateIntParam block, string key);
+		void SetNumberBlock (Func<NSNumber,NSNumber> block, string key);
 	}
 
 	[BaseType (typeof(NSObject))]
@@ -71,10 +71,5 @@ namespace DSWebViewJavascriptContextBinding
 		[Export ("hybridApiUrl:")]
 		void HandleCustomApiUrl (string customUrl);
 	}
-	#region Delegates
-	public delegate void JSObjectCallDelegate ();
-	public delegate void JSObjectCallDelegateParam1 (String param);
-	public delegate NSNumber JSDelegateIntParam (NSNumber Param);
-	#endregion
 }
 
