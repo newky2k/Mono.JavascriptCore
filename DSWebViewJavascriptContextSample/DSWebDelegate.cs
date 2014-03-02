@@ -38,27 +38,47 @@ namespace DSWebViewJavascriptContextSample
 				ctx.SetObject ("aClass", "subNumber", ANumber);
 			
 				//set a execution block that can accept a number and return a number
-				ctx.SetNumberBlock ((NSNumber num) => {
-					var toInt = num.IntValue;
+				ctx.SetNumberBlock ((NSObject num) => {
+					var toInt = num as NSNumber;
 
-					return new NSNumber (toInt * 2);
+					var aInt = toInt.IntValue;
+
+					return new NSNumber (aInt * 2);
 				}, @"getInt");
 					
 				//Set an execution block in the context, 1 parameter no return type
 				ctx.SetBlock ((obj) => {
 
-					var anObject = ctx [new NSString (@"aNumber")];
-					//convert to string
-					var name = obj.ToString ();
+					BeginInvokeOnMainThread (() => {
+						//convert to string
+						var name = obj.ToString ();
 
-					//create message
-					var message = String.Format ("Hello, {0}!", name);
+						//create message
+						var message = String.Format ("Hello, {0}!", name);
 
-					var aNewAler = new UIAlertView ("Welome", message, null, "OK", null);
-					aNewAler.Show ();
+						var aNewAler = new UIAlertView ("Welome", message, null, "OK", null);
+						aNewAler.Show ();
+					});
+
 
 				}, @"sayHello");        
 
+
+				///Multi-parameter void block
+				ctx.SetBlock ((obj, obj2) => {
+					BeginInvokeOnMainThread (() => {
+
+						var firstName = obj.ToString ();
+						var lastName = obj2.ToString ();
+
+						var message = String.Format ("Hello, {0}{1}!", firstName, lastName);
+
+						var aNewAler = new UIAlertView ("Welome", message, null, "OK", null);
+						aNewAler.Show ();
+
+					});
+
+				}, @"sayFirstAndLastName");
 			}
 		}
 

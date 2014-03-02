@@ -16,6 +16,14 @@ function goGetInt()
 	alert(aValue);
 }
 
+function goFirstLast()
+{
+	var aField =  document.getElementById('txtFirst');
+	var aField2 =  document.getElementById('txtLast');
+
+	sayFirstAndLastName(aField.value, aField2.value);
+}
+
 </script>
 </head>
 <body>
@@ -31,7 +39,11 @@ function goGetInt()
         <br />
         <label>Use the DSHybridDelagte class to route api calls instead of window.location</label>
         <button type='button' onclick='DSoft.Online.Native.hybridApiUrl("dsf://dosomething");'>Load Custom URL</button>
-
+        <br />
+        <label>Multi-Paramter call</label><br />
+         <input type='text' id='txtFirst' />
+          <input type='text' id='txtLast' /><br />
+          <button type='button' onclick='goFirstLast()'>Say First and Last name</button>
     </form>
 
 </body>

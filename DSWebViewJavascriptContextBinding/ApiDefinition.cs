@@ -41,11 +41,26 @@ namespace DSWebViewJavascriptContextBinding
 		[Export ("setBlock:forKey:")]
 		void SetBlock (Action block, string key);
 
-		[Export ("setBlockWithParam1:forKey:")]
-		void SetBlock (Action<String> block, string key);
+		[Export ("setBlockWith1Param:forKey:")]
+		void SetBlock (Action<NSObject> block, string key);
+
+		[Export ("setBlockWith2Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject> block, string key);
+
+		[Export ("setBlockWith3Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject,NSObject> block, string key);
+
+		[Export ("setBlockWith4Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject,NSObject,NSObject> block, string key);
+
+		[Export ("setBlockWith5Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject,NSObject,NSObject,NSObject> block, string key);
+
+		[Export ("setBlockWith6Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject,NSObject,NSObject,NSObject,NSObject> block, string key);
 
 		[Export ("setNumberBlock:forKey:")]
-		void SetNumberBlock (Func<NSNumber,NSNumber> block, string key);
+		void SetNumberBlock (Func<NSObject,NSNumber> block, string key);
 	}
 
 	[BaseType (typeof(NSObject))]
