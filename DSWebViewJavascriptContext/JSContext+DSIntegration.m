@@ -78,11 +78,60 @@
 
 
 #pragma mark Number functions
--(void)setNumberBlock:(NSNumber*(^)(id param1))block forKey:(NSString *)key
+-(void)setNumberBlock:(NSNumber*(^)())block forKey:(NSString *)key
+{
+    self[key] = ^{
+        
+        return block();
+        
+    };
+}
+
+-(void)setNumberBlockWith1Param:(NSNumber*(^)(id param1))block forKey:(NSString *)key
 {
     self[key] = ^(id x) {
         
         return block(x);
+    };
+}
+
+-(void)setNumberBlockWith2Param:(NSNumber*(^)(id par1, id par2))block forKey:(NSString *)key
+{
+    self[key] = ^(id par1,id par2) {
+        
+        return block(par1,par2);
+    };
+}
+
+-(void)setNumberBlockWith3Param:(NSNumber*(^)(id par1, id par2, id par3))block forKey:(NSString *)key
+{
+    self[key] = ^(id par1,id par2,id par3) {
+        
+        return block(par1,par2,par3);
+    };
+}
+
+-(void)setNumberBlockWith4Param:(NSNumber*(^)(id par1, id par2, id par3, id par4))block forKey:(NSString *)key
+{
+    self[key] = ^(id par1,id par2,id par3,id par4) {
+        
+        return block(par1,par2,par3, par4);
+    };
+}
+
+-(void)setNumberBlockWith5Param:(NSNumber*(^)(id par1, id par2, id par3, id par4, id par5))block forKey:(NSString *)key
+{
+    self[key] = ^(id par1,id par2,id par3,id par4,id par5) {
+        
+        return block(par1,par2,par3, par4,par5);
+    };
+}
+
+-(void)setNumberBlockWith6Param:(NSNumber*(^)(id par1, id par2, id par3, id par4, id par5,id par6))block forKey:(NSString *)key
+{
+    self[key] = ^(id par1,id par2,id par3,id par4,id par5,id par6) {
+        
+        block(par1,par2,par3, par4,par5,par6);
     };
 }
 

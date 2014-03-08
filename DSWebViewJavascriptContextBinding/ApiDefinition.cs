@@ -7,12 +7,6 @@ using MonoTouch.JavaScriptCore;
 
 namespace DSWebViewJavascriptContextBinding
 {
-	[BaseType (typeof(NSObject))]
-	[Model][Protocol]
-	public interface JSExport
-	{
-	}
-
 	[Model, BaseType (typeof(UIWebViewDelegate))]
 	public partial interface TSWebViewDelegate
 	{
@@ -60,7 +54,25 @@ namespace DSWebViewJavascriptContextBinding
 		void SetBlock (Action<NSObject,NSObject,NSObject,NSObject,NSObject,NSObject> block, string key);
 
 		[Export ("setNumberBlock:forKey:")]
+		void SetNumberBlock (Func<NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith1Param:forKey:")]
 		void SetNumberBlock (Func<NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith2Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith3Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith4Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSObject,NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith5Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSObject,NSObject,NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith6Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSObject,NSObject,NSObject,NSObject,NSNumber> block, string key);
 	}
 
 	[BaseType (typeof(NSObject))]
@@ -78,6 +90,48 @@ namespace DSWebViewJavascriptContextBinding
 	{
 		[Export ("setObject:forKey:")]
 		void SetObject (NSObject obj, string key);
+
+		[Export ("setBlock:forKey:")]
+		void SetBlock (Action block, string key);
+
+		[Export ("setBlockWith1Param:forKey:")]
+		void SetBlock (Action<NSObject> block, string key);
+
+		[Export ("setBlockWith2Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject> block, string key);
+
+		[Export ("setBlockWith3Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject,NSObject> block, string key);
+
+		[Export ("setBlockWith4Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject,NSObject,NSObject> block, string key);
+
+		[Export ("setBlockWith5Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject,NSObject,NSObject,NSObject> block, string key);
+
+		[Export ("setBlockWith6Param:forKey:")]
+		void SetBlock (Action<NSObject,NSObject,NSObject,NSObject,NSObject,NSObject> block, string key);
+
+		[Export ("setNumberBlock:forKey:")]
+		void SetNumberBlock (Func<NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith1Param:forKey:")]
+		void SetNumberBlock (Func<NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith2Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith3Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith4Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSObject,NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith5Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSObject,NSObject,NSObject,NSNumber> block, string key);
+
+		[Export ("setNumberBlockWith6Param:forKey:")]
+		void SetNumberBlock (Action<NSObject,NSObject,NSObject,NSObject,NSObject,NSObject,NSNumber> block, string key);
 	}
 
 	[BaseType (typeof(NSObject))]

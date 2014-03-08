@@ -37,6 +37,7 @@ namespace DSWebViewJavascriptContextSample
 				//attach extra property to the aclass object
 				ctx.SetObject ("aClass", "subNumber", ANumber);
 			
+
 				//set a execution block that can accept a number and return a number
 				ctx.SetNumberBlock ((NSObject num) => {
 					var toInt = num as NSNumber;
